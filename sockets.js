@@ -46,7 +46,7 @@ io.on('connection', function(socket) {
 
     //Don't forget remove client after disconnection
     socket.on('disconnect', function(reason) {
-        io.ClientStore.clientBySocketId(socket.id);
+        io.ClientStore.removeBySocketId(socket.id);
     });
 });
 
