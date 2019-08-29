@@ -11,9 +11,17 @@ module.exports = function ClientStore() {
     };
 
     this.removeBySocketId = async function(socketId) {
-      for (const C in Client)
+      for (const C in Clients)
       {
           if (Clients[C].SocketId == socketId)
+            Clients.splice(C, 1);
+      }
+    };
+
+    this.removeById = async function(id) {
+      for (const C in Clients)
+      {
+          if (Clients[C].Id == id)
             Clients.splice(C, 1);
       }
     };
@@ -26,6 +34,15 @@ module.exports = function ClientStore() {
       for (const client of Clients)
       {
         if (client.Id == clientId)
+          return client;
+      }
+      return null;
+    }
+
+    this.clientBySocketId = function(socketId) {
+      for (const client of Clients)
+      {
+        if (client.SocketId == socketId)
           return client;
       }
       return null;

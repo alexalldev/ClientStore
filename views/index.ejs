@@ -10,6 +10,7 @@
     <link rel="shortcut icon" href="https://alexall.dev/images/logo.png" type="image/x-icon">
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://teamplay.space/public/css/animate.css">
 </head>
 <body>
     <table style="width: 100%; height: 98vh">
@@ -23,11 +24,42 @@
             </tr>
             <tr align="center">
                 <td valign="top">
-                    <a href="/login" class="btn btn-info mb-2 mt-2">Login</a>
-                    <br>
-                    <button class="btn btn-outline-info" id="btnSendId">Get Id via socket.io</button>
-                    <br>
-                    <a href="/logout" class="btn btn-danger mb-2 mt-2">Logout</a>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12 text-center">
+                                <a href="/login" class="btn btn-info mb-2 mt-2">Login</a>
+                            </div>
+                        </div>
+                        <div class="row mb-4">
+                            <div class="col-md-8 text-center">
+                                <button class="btn btn-outline-info" id="btnGetId">Get Id via socket.io</button>
+                            </div>
+                            <div class="cl-md-4">
+                                <span class="Id"></span>
+                            </div>
+                        </div>
+                        <form action="javascript:void(null)" id="formSendToId">
+                            <div class="row mb-1">
+                                <div class="col-md-5 text-center">
+                                    <button class="btn btn-outline-info">Send socket to client with id </button>
+                                </div>
+                                <div class="col-md-2 text-center">
+                                    <input type="number" id="SendInput" class="form-control" required>
+                                </div>
+                                <div class="col-md-2">
+                                    <span> that text </span>
+                                </div>
+                                <div class="col-md-3 text-center">
+                                    <input type="text" id="SendText" class="form-control" required>
+                                </div>
+                            </div>
+                        </form>
+                        <div class="row">
+                            <div class="col-md-12 text-right">
+                                <a href="/logout" class="btn btn-danger mb-2 mt-2">Logout</a>
+                            </div>
+                        </div>
+                    </div>
                 </td>
             </tr>
         </tbody>
