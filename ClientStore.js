@@ -1,7 +1,7 @@
 module.exports = function ClientStore() {
     var Clients = [];
 
-    this.push = async function(Client) { //Client is a object like this {Id: #ClientIdInDatabase#, SocketId: #socket.id#}
+    this.push = function(Client) { //Client is a object like this {Id: #ClientIdInDatabase#, SocketId: #socket.id#}
         for (const C in Clients)
         {
             if (Clients[C].Id == Client.Id)
@@ -10,7 +10,7 @@ module.exports = function ClientStore() {
         Clients.push(Client);
     };
 
-    this.removeBySocketId = async function(socketId) {
+    this.removeBySocketId = function(socketId) {
       for (const C in Clients)
       {
           if (Clients[C].SocketId == socketId)
@@ -18,7 +18,7 @@ module.exports = function ClientStore() {
       }
     };
 
-    this.removeById = async function(id) {
+    this.removeById = function(id) {
       for (const C in Clients)
       {
           if (Clients[C].Id == id)

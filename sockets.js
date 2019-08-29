@@ -8,7 +8,7 @@ var ClientStore = require('./ClientStore');
 
 io.ClientStore = new ClientStore(); //Attach ClientStore to io
 
-io.emit = function(Id, eventName, data) { //Sending Strategy
+io.emitClient = function(Id, eventName, data) { //Sending Strategy
     var client = io.ClientStore.clientById(Id);
     if (client != null)
         try {
@@ -41,13 +41,13 @@ io.on('connection', function(socket) {
         let {id, message} = data;
         console.log(data);
         if (id && message)
-            io.emit(data.id, 'message', data.message);
+            io.emitClient(data.id, 'message', data.message);
     });
 
     //Don't forget remove client after disconnection
     socket.on('disconnect', function(reason) {
-        io.ClientStore.removeById(socket.id);
-      });
+        io.ClientStore.clientBySocketId(socket.id);
+    });
 });
 
 server.listen(80);

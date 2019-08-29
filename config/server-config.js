@@ -1,5 +1,5 @@
 const express = require('express');
-var app  = express();
+var app = express();
 
 /* Here you can configure your server, for example add app.protect function */
 
