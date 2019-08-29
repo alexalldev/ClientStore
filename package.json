@@ -4,7 +4,7 @@
   "description": "ClientStore lesson",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon --ignore sessions/ index.js",
+    "start": "nodemon --ignore sessions/ -L index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
