@@ -8,12 +8,14 @@
 Install npm packages
 ```sh
 npm i
-   or
-npm install
-
 ```
 # Second
-Type node index in bash
+Install nodemon globally.
 ```sh
-$ node index
+$ npm i -g npdemon
+```
+# Third
+Start app in bash
+```sh
+$ npm start
 ```
