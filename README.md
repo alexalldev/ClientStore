@@ -11,7 +11,7 @@ npm i
 # Second
 Install nodemon globally.
 ```sh
-$ npm i -g npdemon
+$ npm i -g nodemon
 ```
 # Third
 Start app in bash
